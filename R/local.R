@@ -120,7 +120,7 @@ read.delim.raw = function(file, header=TRUE, sep="\t", ...) {
 }
 
 write.csv.raw = function(x, file = "", append = FALSE, sep = ",", nsep="\t",
-                          col.names = TRUE, fileEncoding = "") {
+                          col.names = !is.null(colnames(x)), fileEncoding = "") {
   if (is.character(file)) {
     file <- if (nzchar(fileEncoding))
             file(file, ifelse(append, "ab", "wb"), encoding = fileEncoding)
@@ -131,6 +131,11 @@ write.csv.raw = function(x, file = "", append = FALSE, sep = ",", nsep="\t",
     on.exit(close(file))
   }
 
+  if (col.names) {
+    cr = rawToChar(as.output(matrix(colnames(x),nrow=1),sep = sep))
+    writeBin(cr, con=file)
+  }
+
   r = as.output(x, sep = sep, nsep=nsep)
   writeBin(r, con=file)
 }
@@ -138,4 +143,41 @@ write.csv.raw = function(x, file = "", append = FALSE, sep = ",", nsep="\t",
 write.table.raw = function(x, file = "", sep = " ", ...) {
   write.csv.raw(x, file=file, sep=sep, ...)
 }
+
+chunk.map = function(input, output = NULL, formatter = .default.formatter,
+                      FUN, key.sep = NULL, max.line = 65536L,
+                      max.size = 33554432L, output.sep = ",", output.nsep = "\t",
+                      output.keys = FALSE, skip = 0L, ...) {
+
+  if (is.character(input)) {
+    input = file(input, "rb")
+    on.exit(close(input))
+  }
+  if (is.character(output)) {
+    output = file(output, "wb")
+    on.exit(close(output))
+  }
+
+  res <- list()
+  if (skip > 0L) readLines(input, n=skip)
+  cr = chunk.reader(input, max.line = max.line, sep = key.sep)
+
+  while ( length(r <- read.chunk(cr)) ) {
+    val = FUN(formatter(r), ...)
+
+    if (!is.null(output)) {
+      rout = as.output(val, sep = output.sep, nsep = output.nsep, keys = output.keys)
+      writeBin(rout, output)
+    } else {
+      res <- append(res, list(val))
+    }
+  }
+
+  if (is.null(output)) return(res)
+}
+
+
+
+
+
 
