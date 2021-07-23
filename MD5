@@ -1,6 +1,6 @@
-f8a5f55e53ec36d878d923ccba733fde *DESCRIPTION
+47ee10b12fe42237c3b3c2c76782df18 *DESCRIPTION
 5e0ca7c16914d13b1383fc69c6d1d7a5 *NAMESPACE
-567323ecb5da919574f2f9f45fa10641 *NEWS
+a23817b91eac9d542479d9ab4dc8be84 *NEWS
 a60f769e814852189e098f2af81f58f2 *R/chunk.R
 abb705287beda12a38526627d915787c *R/ctapply.R
 116a92e1f34c97984a1872a2fdf9cbb2 *R/iters.R
@@ -11,7 +11,7 @@ e6a36a5f5efc74e6df8d1d16682b1fa0 *R/rbind.R
 f49b0f1c2112894dfa6a9ac6fa490d37 *R/split.R
 766a9da596a46a4deb6caeadc7e5e0a7 *R/stream.R
 6fa4fdb87c6d9ee2237207ad02904dbf *R/zzz.R
-aa7d497f0c83809bec53391464e453a4 *README.md
+a8b801267f505f47f6501ed7d18cf4ca *README.md
 78580196a7d19e717240f7b2862b03ac *man/asoutput.Rd
 93a315dfa12d5a368f6494e10276849c *man/chunk.Rd
 e4f16d9ce2816e7866dce1ce6329e123 *man/chunk.apply.Rd
@@ -31,9 +31,9 @@ cc356294a1f62de4035d5012c881e335 *man/output.file.Rd
 8bb8c5eb1eb4d3000353ea47ecf80e01 *man/readAsRaw.Rd
 a858bab24873020fa42ee49a02db2ee4 *man/which.min.key.Rd
 d90ff35783221ed1436afdd0697bd2ce *man/write.csv.raw.Rd
-f56a91561a9d9f5d108783742ea000cf *src/as_output.c
-53e365a213fff3d8aee21639ae66175e *src/ctapply.c
-d34e203797f8f5e42780e10657e2c319 *src/lnchunk.c
+298a7a12494b3731330d4e91be4ad523 *src/as_output.c
+cfae7848bb00bbadcff422e0b96e22fe *src/ctapply.c
+c6a85cc9e681e4ea2a603039201c230f *src/lnchunk.c
 c1b047d385d612d4815e18fa2c4f923b *src/rbind.c
 8c2eca9a3e9203c02511f3a578c039a9 *src/split.c
 cd55ba82f7955556b91a90e7d4265fde *src/split_df.c
