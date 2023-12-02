@@ -1,4 +1,48 @@
-0.3-2
+0.3-5	2023-11-29
+    *	add format casts
+
+
+0.3-4	2023-11-28
+    *	pass max.size argument through chunk.map() (#39)
+
+    *	minor change to work around rchk not being able to follow
+	protections across functions.
+
+
+0.3-3	2022-12-09
+    *	fix error/segfault (depending on R version) in as.output()
+	when a type that doesn't support LENGTH() is passed (such as
+	NULL).
+
+    *	CH.MAX.SIZE was ignored in chunk.apply() for parallel jobs
+
+    *	add CH.BINARY flag which can be set to TRUE if the merge step
+	should be performed continually as a call to a binary CH.MERGE
+	function instead of collecting all results and then calling
+	CH.MERGE.
+	
+	Analogously, CH.INITIAL has been added which is a function
+	called on the first result. If NULL then
+	CH.MERGE(NULL, result) is called instead.
+	
+	Note: in previous versions regular chunk.apply() was behaving
+	like CH.BINARY=FALSE, but when parallel was set then it
+	behaved like CH.BINARY=TRUE. Now CH.BINARY is explicit.
+
+    *	new parallel chunk.apply() implementation
+	
+	The related arguments have been re-named to avoid clashes with
+	actual function arguments. CH.MERGE now behaves the same way
+	as with sequential processing for consistency.
+	
+	CH.PARALLEL - if set to 2 or higher triggers parallel
+	              processing of chunks
+	CH.SEQUENTIAL - if FALSE then parallel processing is allowed
+	              to change the order of the chunks to process
+	              chunks yield results faster frist.
+
+
+0.3-2	2021-07-23
     *	minor changes for compatibility with write-barrier
 	and R-devel (no functional difference)
 
