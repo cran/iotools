@@ -1,7 +1,10 @@
 Package: iotools
-Version: 0.3-5
+Version: 0.4-0
 Title: I/O Tools for Streaming
-Author: Simon Urbanek <Simon.Urbanek@r-project.org>, Taylor Arnold <taylor.arnold@acm.org>
+Authors@R: c(person("Simon", "Urbanek", role=c("aut","cre"), email="Simon.Urbanek@r-project.org", comment=c("https://urbanek.nz", ORCID="0000-0003-2297-1732")), person("Taylor", "Arnold", role=c("aut"), email="taylor.arnold@acm.org"))
+Author: Simon Urbanek [aut, cre] (https://urbanek.nz, ORCID:
+    <https://orcid.org/0000-0003-2297-1732>),
+  Taylor Arnold [aut]
 Maintainer: Simon Urbanek <Simon.Urbanek@r-project.org>
 Depends: R (>= 2.9.0)
 Imports: methods, parallel, utils
@@ -9,6 +12,6 @@ Description: Basic I/O tools for streaming and data parsing.
 License: GPL-2 | GPL-3
 URL: https://www.rforge.net/iotools
 NeedsCompilation: yes
-Packaged: 2023-11-30 21:57:27 UTC; rforge
+Packaged: 2026-02-19 01:10:38 UTC; rforge
 Repository: CRAN
-Date/Publication: 2023-12-02 11:04:44 UTC
+Date/Publication: 2026-02-19 06:20:03 UTC
