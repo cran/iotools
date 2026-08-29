@@ -5,7 +5,7 @@
 #include <Rinternals.h>
 
 static int sep_len(const char *s, int sep) {
-    char *m = strchr(s, sep);
+    const char *m = strchr(s, sep);
     return (!m) ? strlen(s) : m - s;
 }
 

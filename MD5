@@ -1,4 +1,4 @@
-cdb062f678216a5940ddb751ede3fb47 *DESCRIPTION
+6b8baf9c216294df708646ba2c735083 *DESCRIPTION
 09fc79ce9782a54c11dc2aaf06a49540 *NAMESPACE
 4fcb8ce898a68ecf7ca8b1090049754e *NEWS
 a60f769e814852189e098f2af81f58f2 *R/chunk.R
@@ -42,7 +42,7 @@ b532f3234cc1aefb8dc5125b8156f5dd *src/rcompat.h
 cd55ba82f7955556b91a90e7d4265fde *src/split_df.c
 6571d9a1009f7ea76727e4e831384f67 *src/split_df_fw.c
 6f0089a362d06f3bd398ed60f4561db9 *src/stdio.c
-09b537b4db87ea17583550f4b3cce60d *src/strutil.c
+2da9fd1a9b2c8406057f8af7ad86b557 *src/strutil.c
 62f7d91f70df332c600fc02698fb8d24 *src/tparse.c
 e857e908ec00fdf605115a210c6d010a *src/utils.c
 b8526345af338442c43f57ad4c03dd7e *src/utils.h
